@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexander Coates | LinkedIn Positioning Review</title>
+<meta name="description" content="A private LinkedIn positioning review prepared for Alexander Coates.">
+<style>
+:root {
+  --ink:#101417;
+  --muted:#657078;
+  --paper:#f4f0e8;
+  --panel:#fffdf8;
+  --line:#d9d3c8;
+  --navy:#0c1b24;
+  --copper:#b86d3f;
+  --copper-soft:#e7c2aa;
+  --white:#ffffff;
+  --max:1180px;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  color:var(--ink);
+  background:var(--paper);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height:1.6;
+}
+body::selection { background:var(--copper-soft); }
+a { color:inherit; }
+img { max-width:100%; display:block; }
+.container { width:min(calc(100% - 40px), var(--max)); margin:0 auto; }
+.nav {
+  position:sticky; top:0; z-index:20;
+  background:rgba(244,240,232,.92); backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(16,20,23,.09);
+}
+.nav-inner { display:flex; align-items:center; justify-content:space-between; min-height:62px; gap:20px; }
+.brand { font-weight:800; letter-spacing:.12em; font-size:11px; }
+.nav-links { display:flex; gap:18px; flex-wrap:wrap; }
+.nav-links a { text-decoration:none; font-size:12px; color:var(--muted); }
+.nav-links a:hover, .nav-links a:focus { color:var(--ink); }
+.hero {
+  min-height:78vh; display:grid; align-items:end;
+  background:var(--navy); color:#f7f3ea; position:relative; overflow:hidden;
+}
+.hero::before {
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 78% 22%, rgba(184,109,63,.24), transparent 30%),
+    linear-gradient(120deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size:auto, 54px 54px;
+  opacity:.55;
+}
+.hero-grid { position:relative; padding:100px 0 76px; display:grid; grid-template-columns:1.15fr .85fr; gap:70px; }
+.kicker { color:#d7a383; text-transform:uppercase; letter-spacing:.16em; font-size:11px; font-weight:800; }
+.hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight:500; font-size:clamp(48px,7vw,92px); line-height:.98; letter-spacing:-.045em; margin:18px 0 28px;
+}
+.hero h1 em { color:#d9a783; font-style:normal; }
+.hero p { max-width:650px; color:#c9d0d2; font-size:17px; margin:0; }
+.hero-note { align-self:end; border-left:1px solid rgba(255,255,255,.25); padding-left:26px; }
+.hero-note strong { display:block; color:#fff; font-size:18px; margin-bottom:8px; }
+.hero-note span { color:#aeb9bd; font-size:13px; }
+.section { padding:100px 0; }
+.section.alt { background:#ebe5db; }
+.section-head { display:grid; grid-template-columns:.35fr 1fr; gap:40px; margin-bottom:46px; }
+.section-num { font-size:12px; font-weight:800; color:var(--copper); letter-spacing:.12em; }
+.section h2 {
+  font-family:Georgia, "Times New Roman", serif; font-weight:500; font-size:clamp(36px,5vw,60px);
+  line-height:1.02; letter-spacing:-.035em; margin:0 0 16px;
+}
+.lead { font-size:18px; color:#49545b; max-width:760px; }
+.grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+.insight, .feature-card, .option, .copy-block, .compare-card {
+  background:var(--panel); border:1px solid var(--line); border-radius:18px;
+}
+.insight { padding:26px; min-height:190px; }
+.insight .num { color:var(--copper); font-size:12px; font-weight:800; }
+.insight h3 { font-size:21px; margin:16px 0 10px; letter-spacing:-.02em; }
+.insight p, .feature-card p, .rationale { color:var(--muted); margin:0; font-size:14px; }
+.pill { display:inline-flex; padding:7px 10px; border-radius:999px; background:#eee7dc; color:#5e5045; font-size:11px; font-weight:800; letter-spacing:.07em; text-transform:uppercase; }
+.current {
+  background:#151c20; color:#f5f0e7; border-radius:20px; padding:34px; overflow:auto;
+}
+.current .label, .copy-block .label { color:#c78a67; text-transform:uppercase; letter-spacing:.12em; font-size:10px; font-weight:800; }
+.current p { font-size:22px; line-height:1.35; margin:12px 0 0; max-width:1000px; }
+.split { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:start; }
+.compare-card { padding:28px; }
+.compare-card.current-card { background:#172126; color:#f6f1e8; border-color:#172126; }
+.compare-card .big { font-family:Georgia,serif; font-size:28px; line-height:1.18; margin:14px 0; }
+.bullets { margin:18px 0 0; padding-left:18px; color:var(--muted); }
+.current-card .bullets { color:#c8d0d2; }
+.options { display:grid; gap:14px; }
+.option { padding:22px 24px; }
+.option-top { display:flex; justify-content:space-between; align-items:center; gap:15px; }
+.eyebrow { font-size:10px; letter-spacing:.13em; font-weight:800; color:var(--copper); }
+.headline-copy { font-size:23px; line-height:1.25; letter-spacing:-.02em; margin:18px 0 10px; max-width:930px; }
+.copy-btn {
+  appearance:none; border:1px solid #c9c0b5; background:transparent; color:var(--ink);
+  padding:8px 12px; border-radius:999px; font-size:11px; font-weight:800; cursor:pointer;
+}
+.copy-btn:hover, .copy-btn:focus { background:var(--ink); color:#fff; border-color:var(--ink); }
+.copy-btn.copied { background:var(--copper); color:#fff; border-color:var(--copper); }
+.copy-block { padding:28px; }
+.copy-actions { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.copy-text { white-space:pre-wrap; font-size:16px; line-height:1.72; color:#2d373c; margin-top:22px; }
+.feature-card { padding:26px; min-height:220px; }
+.feature-card h3 { margin:18px 0 10px; font-size:21px; }
+.banner-callout {
+  background:var(--navy); color:#f4f0e8; border-radius:22px; padding:42px;
+  display:grid; grid-template-columns:1fr auto; gap:30px; align-items:center;
+}
+.banner-callout h3 { font-family:Georgia,serif; font-size:38px; font-weight:500; line-height:1.1; margin:10px 0; }
+.banner-callout p { color:#bdc7ca; margin:0; max-width:720px; }
+.badge { padding:12px 15px; border:1px solid rgba(255,255,255,.2); border-radius:999px; color:#dfb493; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+.shift {
+  display:grid; grid-template-columns:1fr auto 1fr; align-items:stretch; gap:18px;
+}
+.shift-card { padding:30px; border-radius:18px; border:1px solid var(--line); background:var(--panel); }
+.shift-card.new { background:#172126; color:#f6f1e8; border-color:#172126; }
+.shift-card h3 { margin:0 0 14px; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--copper); }
+.shift-card p { font-family:Georgia,serif; font-size:28px; line-height:1.15; margin:0; }
+.arrow { display:grid; place-items:center; color:var(--copper); font-size:30px; }
+.footer { padding:60px 0; background:#101417; color:#aeb7ba; }
+.footer strong { color:#fff; }
+.footer small { font-size:11px; line-height:1.6; }
+.reveal { opacity:0; transform:translateY(16px); transition:opacity .65s ease, transform .65s ease; }
+.reveal.visible { opacity:1; transform:none; }
+:focus-visible { outline:2px solid var(--copper); outline-offset:3px; }
+@media (max-width:900px) {
+  .hero-grid, .section-head, .split, .grid-2, .grid-3, .shift { grid-template-columns:1fr; }
+  .hero-grid { gap:42px; }
+  .hero-note { align-self:start; }
+  .arrow { transform:rotate(90deg); }
+  .banner-callout { grid-template-columns:1fr; }
+}
+@media (max-width:650px) {
+  .container { width:min(calc(100% - 28px), var(--max)); }
+  .nav-inner { min-height:56px; }
+  .nav-links { display:none; }
+  .hero { min-height:78vh; }
+  .hero-grid { padding:78px 0 58px; }
+  .hero h1 { font-size:52px; }
+  .section { padding:70px 0; }
+  .section-head { margin-bottom:34px; }
+  .current p, .headline-copy { font-size:19px; }
+  .banner-callout h3 { font-size:30px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  .reveal { opacity:1; transform:none; transition:none; }
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="brand">ALEXANDER COATES</div>
+    <nav class="nav-links" aria-label="Review navigation">
+      <a href="#overview">Overview</a><a href="#positioning">Positioning</a><a href="#headline">Headline</a>
+      <a href="#about">About</a><a href="#featured">Featured</a><a href="#banner">Banner</a><a href="#shift">Shift</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="overview">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker">LinkedIn Positioning Review</div>
+      <h1>Make the <em>standard</em> easier to understand.</h1>
+      <p>Prepared for Alexander Coates. The strongest opportunity is to make The One Standard feel less like a broad leadership philosophy and more like the distinctive, practical development system that sits behind it.</p>
+    </div>
+    <div class="hero-note">
+      <strong>The core shift</strong>
+      <span>From “helping people raise the standard” to clearly owning a practical 12-step system for leadership, culture and performance.</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="positioning">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">01 / WHAT I FOUND</div>
+      <div>
+        <h2>The thinking is strong. The profile can make the product clearer.</h2>
+        <p class="lead">The public brand already has a distinct idea, a named framework, a 12-step practice, individual and organisational applications, and a founder story grounded in real operational experience. The LinkedIn profile currently gives visitors more philosophy than product clarity.</p>
+      </div>
+    </div>
+    <div class="grid-3">
+      <article class="insight reveal"><span class="num">01</span><h3>Own the mechanism</h3><p>“The One Standard” is the memorable asset. Bring the 12-step practice closer to the first line so the visitor understands what Alexander actually built.</p></article>
+      <article class="insight reveal"><span class="num">02</span><h3>Make the audience visible</h3><p>The offer serves individuals, founders, managers, team leaders and organisations. The profile should make that breadth feel intentional rather than broad.</p></article>
+      <article class="insight reveal"><span class="num">03</span><h3>Use the lived proof</h3><p>The frontline and team-leadership background is a powerful differentiator. It explains why the framework is practice-led rather than purely theoretical.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">02 / CURRENT POSITIONING</div>
+      <div>
+        <h2>What a new visitor sees today.</h2>
+        <p class="lead">The profile establishes Alexander as the founder of The One Standard and explains the philosophy in depth. It is credible, but a visitor still has to connect the philosophy to the concrete product and use case.</p>
+      </div>
+    </div>
+    <div class="current reveal">
+      <div class="label">Current headline</div>
+      <p>Founder &amp; Creator, The One Standard Development | Helping people and organisations raise the standard they live, lead and perform by</p>
+    </div>
+    <div style="height:18px"></div>
+    <div class="split">
+      <article class="compare-card current-card reveal">
+        <span class="pill">What works</span>
+        <ul class="bullets">
+          <li>Founder ownership is clear.</li>
+          <li>The brand name is repeated.</li>
+          <li>The people and organisations audience is included.</li>
+          <li>The “standard” idea is consistent with the website.</li>
+        </ul>
+      </article>
+      <article class="compare-card reveal">
+        <span class="pill">What is still unclear</span>
+        <ul class="bullets">
+          <li>What exactly is The One Standard?</li>
+          <li>What does a buyer actually get?</li>
+          <li>Why should a leadership or people leader care?</li>
+          <li>What makes Alexander different from a general leadership coach or consultant?</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="headline">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">03 / HEADLINE</div>
+      <div>
+        <h2>Five stronger directions.</h2>
+        <p class="lead">Each version makes a different tradeoff between product clarity, founder authority and organisational relevance.</p>
+      </div>
+    </div>
+    <div class="options"><article class="option reveal">
+      <div class="option-top"><span class="eyebrow">OPTION 01</span><button class="copy-btn" data-copy-target="headline-1" type="button">Copy</button></div>
+      <p class="headline-copy" id="headline-1">Founder, The One Standard | Helping people and organisations raise the standard they think, lead and perform by</p>
+      <p class="rationale">Makes the offer immediately legible while keeping the core brand idea intact.</p>
+    </article>
+<article class="option reveal">
+      <div class="option-top"><span class="eyebrow">OPTION 02</span><button class="copy-btn" data-copy-target="headline-2" type="button">Copy</button></div>
+      <p class="headline-copy" id="headline-2">Founder &amp; Creator, The One Standard | A 12-step practice for stronger leadership, culture and performance</p>
+      <p class="rationale">Turns the philosophy into a concrete product and outcome.</p>
+    </article>
+<article class="option reveal">
+      <div class="option-top"><span class="eyebrow">OPTION 03</span><button class="copy-btn" data-copy-target="headline-3" type="button">Copy</button></div>
+      <p class="headline-copy" id="headline-3">Leadership &amp; Culture Development | Founder of The One Standard | Build the standard. Change how teams perform.</p>
+      <p class="rationale">Leans more toward organisational buyers and makes the business outcome clearer.</p>
+    </article>
+<article class="option reveal">
+      <div class="option-top"><span class="eyebrow">OPTION 04</span><button class="copy-btn" data-copy-target="headline-4" type="button">Copy</button></div>
+      <p class="headline-copy" id="headline-4">Founder, The One Standard | Helping leaders build the standards that shape behaviour, culture and performance</p>
+      <p class="rationale">Positions Alexander around the mechanism behind the problem, not generic leadership advice.</p>
+    </article>
+<article class="option reveal">
+      <div class="option-top"><span class="eyebrow">OPTION 05</span><button class="copy-btn" data-copy-target="headline-5" type="button">Copy</button></div>
+      <p class="headline-copy" id="headline-5">The One Standard | Practical leadership and behavioural development built from real-world experience</p>
+      <p class="rationale">A more understated, authority-led direction that foregrounds the grounded methodology.</p>
+    </article></div>
+  </div>
+</section>
+
+<section class="section alt" id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">04 / ABOUT</div>
+      <div>
+        <h2>Keep the philosophy. Tighten the path to the offer.</h2>
+        <p class="lead">The current About has a strong thesis and a credible personal story. The main improvement is structural: name the product earlier, define the format, clarify who it serves, then use Alexander's experience as proof of why the system exists.</p>
+      </div>
+    </div>
+    <div class="copy-block reveal">
+      <div class="copy-actions"><div class="label">Current About</div><span class="pill">Source profile</span></div>
+      <div class="copy-text">Success is rarely determined by talent alone. It is built, and sustained, by the standard we choose to live by.
+
+After more than two decades leading teams, developing people and studying many of the world&#x27;s most respected thinkers, I&#x27;ve become convinced of one simple truth: Everything rises, or falls, to the standard we consistently uphold.
+
+I&#x27;ve seen capable people achieve extraordinary results once they became intentional about the standards they expected from themselves. I&#x27;ve also seen successful individuals and organisations lose momentum, not through a lack of ability, but through the gradual erosion of the standards that once made them exceptional.
+
+Those experiences led me to create The One Standard. Not simply as a leadership program, but as a practical philosophy supported by a structured framework that helps individuals and organisations intentionally raise the standard by which they think, lead, decide and perform.
+
+The framework combines lessons earned through my own experiences with timeless principles drawn from many of history&#x27;s most respected minds in leadership, business, psychology, philosophy and human performance. My goal has been to bring these enduring ideas together into one practical system that creates lasting behavioural change through consistent practice.
+
+Because knowledge alone rarely changes lives. Practice does.
+
+The standards we practice become the standards we live by. Those standards shape our decisions, our behaviours and ultimately our results.
+
+I continue to work in frontline operational environments where leadership, accountability and performance are tested every day. My perspective isn&#x27;t built solely from books or boardrooms. It&#x27;s continually refined through real-world experience.
+
+I&#x27;ve also developed a physical movement practice founded on the same philosophy, that meaningful growth comes from small, intentional actions performed consistently over time.
+
+Here I share insights on leadership, culture, discipline, behavioural change and building environments where excellence becomes the expected standard.
+
+Whether you&#x27;re committed to raising your own standard, leading exceptional people or creating a culture where excellence becomes the expectation, I&#x27;d welcome the opportunity to connect.
+
+&quot;The standard you live by becomes the standard you inspire.&quot;
+Alexander Coates</div>
+    </div>
+    <div style="height:22px"></div>
+    <div class="copy-block reveal">
+      <div class="copy-actions"><div class="label">New About</div><button class="copy-btn" data-copy-target="new-about" type="button">Copy</button></div>
+      <div class="copy-text" id="new-about">I believe sustainable performance is built on the standards people consistently uphold.
+
+I&#x27;m the founder of The One Standard, a practical 12-step development practice designed to help individuals and organisations raise the standard by which they think, lead, decide and perform.
+
+The idea came from more than 20 years of real-world experience across different industries, including frontline operational environments and leading teams under pressure. In large-scale agriculture, I was trusted to lead underperforming teams and turn them into stronger, more accountable teams through clear standards and consistent leadership.
+
+That experience shaped how I see development:
+
+Talent matters. Motivation matters. But the standards you repeatedly practise are what become your way of operating.
+
+The One Standard turns that idea into a structured practice. One short session each week for twelve weeks, carried into the work people are already doing. The goal is not another burst of motivation. It is lasting behavioural change through repetition.
+
+For individuals, it is a practical system for building greater discipline, clarity and personal capability.
+
+For organisations, it provides a scalable framework for developing people, strengthening culture and creating a shared standard across teams.
+
+I also continue to work in frontline operational environments, where leadership, accountability and performance are tested in real conditions. That keeps the work grounded in practice rather than theory.
+
+I write about leadership, culture, discipline, behavioural change and the standards that shape performance.
+
+If you are serious about raising the standard you live or lead by, connect with me here on LinkedIn.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="featured">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">05 / FEATURED</div>
+      <div>
+        <h2>Let the profile prove the idea.</h2>
+        <p class="lead">The strongest Featured section is not a content library. It should help a curious visitor understand the product, the founder story and the easiest way to experience the methodology.</p>
+      </div>
+    </div>
+    <div class="grid-3"><article class="feature-card reveal">
+      <span class="eyebrow">DIRECTION 01</span>
+      <h3>Start Here: The One Standard</h3>
+      <p>Feature the Complete Practice or a concise overview page. It gives a new profile visitor an immediate understanding of the product behind the philosophy.</p>
+    </article>
+<article class="feature-card reveal">
+      <span class="eyebrow">DIRECTION 02</span>
+      <h3>The Founder Story</h3>
+      <p>Feature the About page or a short founder-led post explaining the frontline experiences that shaped the framework. This is the strongest credibility bridge between Alexander and the methodology.</p>
+    </article>
+<article class="feature-card reveal">
+      <span class="eyebrow">DIRECTION 03</span>
+      <h3>Proof of the Practice</h3>
+      <p>Feature the free self-assessment, practice overview, or app preview. The goal is to let visitors experience the method instead of only reading about it.</p>
+    </article></div>
+  </div>
+</section>
+
+<section class="section alt" id="banner">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">06 / BANNER</div>
+      <div>
+        <h2>One job: make the positioning obvious before the visitor scrolls.</h2>
+        <p class="lead">No current banner asset was supplied with the profile, so its existing visual communication could not be evaluated directly. The new direction therefore focuses on the clearest brand message already supported by the public site.</p>
+      </div>
+    </div>
+    <div class="banner-callout reveal">
+      <div>
+        <div class="eyebrow">NEW BANNER DIRECTION</div>
+        <h3>Raise the standard. Change how people think, lead and perform.</h3>
+        <p>The supporting line identifies the 12-step practice and makes the profile immediately connect to a real product rather than a generic leadership philosophy.</p>
+      </div>
+      <div class="badge">Your new banner is attached separately.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shift">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">07 / POSITIONING SHIFT</div>
+      <div>
+        <h2>From philosophy to owned category.</h2>
+      </div>
+    </div>
+    <div class="shift">
+      <article class="shift-card reveal">
+        <h3>Current</h3>
+        <p>Helping people and organisations raise the standard they live, lead and perform by.</p>
+      </article>
+      <div class="arrow" aria-hidden="true">→</div>
+      <article class="shift-card new reveal">
+        <h3>New</h3>
+        <p>Founder of The One Standard, a practical 12-step system for stronger leadership, culture and performance.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <small><strong>Alexander Coates</strong><br>
+    The One Standard Development<br><br>
+    This review is based on the supplied LinkedIn profile material and publicly available information from The One Standard. No unsupported client results, revenue figures, awards or testimonials have been added.</small>
+  </div>
+</footer>
+
+<script>
+(function() {
+  const revealItems = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .12 });
+  revealItems.forEach(el => observer.observe(el));
+
+  document.querySelectorAll('.copy-btn').forEach(button => {
+    button.addEventListener('click', async () => {
+      const targetId = button.getAttribute('data-copy-target');
+      const target = document.getElementById(targetId);
+      if (!target) return;
+      const text = target.innerText.trim();
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (e) {
+        const area = document.createElement('textarea');
+        area.value = text;
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand('copy');
+        area.remove();
+      }
+      const original = button.textContent;
+      button.textContent = 'Copied';
+      button.classList.add('copied');
+      setTimeout(() => {
+        button.textContent = original;
+        button.classList.remove('copied');
+      }, 1400);
+    });
+  });
+})();
+</script>
+</body>
+</html>
